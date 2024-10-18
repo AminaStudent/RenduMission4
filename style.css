@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+    margin-right: 20px; /* Décale le bouton vers la droite */
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #0047AB 0%, #0B5AA3 28.53%, #000 75.52%);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+section {
+    padding: 0 19%;
+}
+
+.hero-text {
+    margin-left: 30px;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-img {
+    border-radius: 50%;
+}
+
+.hero-img img {
+    position: relative;
+    top: 3rem;
+    width: 56vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px white;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.hero-img img:hover {
+    box-shadow: 0 0 50px white, 0 0 100px white;
+}
+
+.hero-text a {
+    display: inline-block;
+    color: white;
+    background: #0B5AA3;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+}
+
+/* Faire un effet quand on passe la souris sur les deux boutons */
+.hero-text a:hover {
+    background: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.ctaa {
+    background: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.ctaa i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+@media (max-width: 1535px) {
+    header {
+        padding: 15px 3%;
+        transition: .2s;
+    }
+    .icons {
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .scroll-down {
+        right: 3%;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 1460px) {
+    section {
+        padding: 0 12%;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 1340px) {
+    .hero-img img {
+        width: 100%;
+        height: auto;
+    }
+    .hero-text h1 {
+        font-size: 75px;
+        margin: 0 0 30px;
+    }
+    .hero-text h5 {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 1195px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text {
+        padding-top: 115px;
+    }
+    .hero-img {
+        text-align: center;
+    }
+    .hero-img img {
+        width: 560px;
+        height: auto;
+    }
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .icons {
+        display: none;
+    }
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    #menu-icon {
+        display: block;
+    }
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 300px;
+        height: auto; /* Ajustement pour le contenu */
+        background: #0B5AA3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        transition: all .55s ease;
+        transform: translateX(100%); /* Cache le menu par défaut */
+        opacity: 0; /* Cache le menu par défaut */
+        visibility: hidden; /* Cache le menu par défaut */
+    }
+    .navlist a {
+        margin-left: 0;
+        display: block;
+        margin: 7px 0;
+    }
+    /* Affiche le menu lorsque le checkbox est coché */
+    #menu-toggle:checked + #menu-icon + .navlist {
+        transform: translateX(0);
+        opacity: 1; /* Affiche le menu */
+        visibility: visible; /* Rend le menu visible */
+    }
+}
+
+@media (max-width: 680px) {
+    .hero-img img {
+        width: 100%;
+        height: auto;
+    }
+}
